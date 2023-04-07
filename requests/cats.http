@@ -1,0 +1,13 @@
+### GET request with environment variables
+GET {{host}}/catssomething/biba
+Accept: application/json
+
+### Post requset
+POST {{host}}/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Mun Mun",
+  "age": 3
+}
