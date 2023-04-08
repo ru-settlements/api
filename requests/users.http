@@ -1,5 +1,5 @@
 ### GET request with environment variables
-GET {{host}}/catssomething/biba
+GET {{host}}/users
 Accept: application/json
 
 ### Post requset
