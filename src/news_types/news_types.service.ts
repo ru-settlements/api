@@ -3,7 +3,7 @@ import { CreateNewsTypeDto } from './dto/create-news_type.dto';
 import { UpdateNewsTypeDto } from './dto/update-news_type.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { NewsTypes } from './entities/news_types.entity';
-import { Repository, UpdateResult } from 'typeorm';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class NewsTypesService {
@@ -13,11 +13,10 @@ export class NewsTypesService {
   ) {}
 
   create(createNewsTypeDto: CreateNewsTypeDto): Promise<NewsTypes> {
-    const newsType = new NewsTypes();
-    newsType.name = createNewsTypeDto.name;
-    newsType.description = createNewsTypeDto.description;
-
-    return this.newsTypesRepository.save(newsType);
+    return this.newsTypesRepository.save({
+      ...new NewsTypes(),
+      ...createNewsTypeDto,
+    });
   }
 
   findAll() {

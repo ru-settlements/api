@@ -1,6 +1,15 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import dayjs = require('dayjs');
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
-@Entity()
+@Entity('news')
 export class News {
   @PrimaryGeneratedColumn()
   id: number;
@@ -11,12 +20,23 @@ export class News {
   @Column('text')
   text: string;
 
-  @Column('timestamp')
-  created_at: string;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @Column('timestamp')
-  updated_at: string;
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @Column('int')
   type_id: number;
+
+  @BeforeInsert()
+  insertCreated() {
+    this.created_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
+    this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
+  }
+
+  @BeforeUpdate()
+  insertUpdated() {
+    this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
+  }
 }

@@ -9,11 +9,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 import { UsersService } from './users/users.service';
-import { Users } from './users/entities/users.entity';
 import { NewsTypesModule } from './news_types/news_types.module';
 import { NewsTypesService } from './news_types/news_types.service';
 import { NewsTypesController } from './news_types/news_types.controller';
-import { NewsTypes } from './news_types/entities/news_types.entity';
 
 @Module({
   controllers: [AppController, UsersController, NewsTypesController],
@@ -35,7 +33,7 @@ import { NewsTypes } from './news_types/entities/news_types.entity';
         database: configService.get('DATABASE_NAME'),
         migrationsRun: true,
         migrationsTableName: 'migrations_typeorm',
-        entities: [Users, NewsTypes],
+        autoLoadEntities: true,
         synchronize: false,
       }),
     }),
