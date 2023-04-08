@@ -1,0 +1,26 @@
+### GET request with environment variables
+GET {{host}}/news-types
+Accept: application/json
+
+### Post requset
+POST {{host}}/news-types
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "default2",
+  "description": "Some eu first news_types description"
+}
+
+### Update requset
+PATCH {{host}}/news-types/7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "default biba"
+}
+
+### Delete request
+DELETE {{host}}/news-types/7
+Accept: application/json

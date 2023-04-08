@@ -10,10 +10,14 @@ import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 import { UsersService } from './users/users.service';
 import { Users } from './users/entities/users.entity';
+import { NewsTypesModule } from './news_types/news_types.module';
+import { NewsTypesService } from './news_types/news_types.service';
+import { NewsTypesController } from './news_types/news_types.controller';
+import { NewsTypes } from './news_types/entities/news_types.entity';
 
 @Module({
-  controllers: [AppController, UsersController],
-  providers: [AppService, UsersService],
+  controllers: [AppController, UsersController, NewsTypesController],
+  providers: [AppService, UsersService, NewsTypesService],
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
@@ -29,12 +33,15 @@ import { Users } from './users/entities/users.entity';
         username: configService.get('DATABASE_USERNAME'),
         password: configService.get('DATABASE_PASSWORD'),
         database: configService.get('DATABASE_NAME'),
-        entities: [Users],
+        migrationsRun: true,
+        migrationsTableName: 'migrations_typeorm',
+        entities: [Users, NewsTypes],
         synchronize: false,
       }),
     }),
     UsersModule,
     NewsModule,
+    NewsTypesModule,
   ],
 })
 export class AppModule implements NestModule {

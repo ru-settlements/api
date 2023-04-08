@@ -1,16 +1,16 @@
 import dayjs = require('dayjs');
 import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
-@Entity()
-export class Users {
+@Entity('news_types')
+export class NewsTypes {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -18,16 +18,7 @@ export class Users {
   name: string;
 
   @Column({ type: 'varchar', width: 256 })
-  email: string;
-
-  @Column()
-  nickname: string;
-
-  @Column('int')
-  location_id: number;
-
-  @Column({ type: 'varchar', width: 256 })
-  password: string;
+  description: string;
 
   @CreateDateColumn()
   created_at: Date;
