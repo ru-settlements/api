@@ -5,9 +5,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToOne,
+  JoinColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import { NewsTypes } from '../../news_types/entities/news_types.entity';
 
 @Entity('news')
 export class News {
@@ -26,17 +30,23 @@ export class News {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Column('int')
+  @Column()
   type_id: number;
+
+  @OneToOne(() => NewsTypes)
+  @JoinColumn({ name: 'type_id' })
+  type: NewsTypes;
 
   @BeforeInsert()
   insertCreated() {
+    // todo rewrite it or move to helper
     this.created_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 
   @BeforeUpdate()
   insertUpdated() {
+    // todo rewrite it or move to helper
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 }

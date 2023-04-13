@@ -37,12 +37,14 @@ export class Users {
 
   @BeforeInsert()
   insertCreated() {
+    // todo rewrite it or move to helper
     this.created_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 
   @BeforeUpdate()
   insertUpdated() {
+    // todo rewrite it or move to helper
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 }
