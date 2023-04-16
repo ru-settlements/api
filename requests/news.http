@@ -1,6 +1,7 @@
 ### GET request with environment variables
 GET {{host}}/news
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibG9sa2VrQG1haWwuY29tIiwiaWF0IjoxNjgxNjc0MjEyLCJleHAiOjE2ODE2Nzc4MTIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.zO6D6dk4_hi946ERpvDmOWHcvAPVo1ALJQBEUaVe4AE
 
 ### Post requset
 POST {{host}}/news

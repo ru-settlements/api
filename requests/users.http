@@ -11,3 +11,33 @@ Content-Type: application/json
   "name": "Mun Mun",
   "age": 3
 }
+
+### Post signup
+POST {{host}}/authentication/sign-up
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol"
+}
+
+### Post signin
+POST {{host}}/authentication/sign-in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol"
+}
+
+### Post signin wrong
+POST {{host}}/authentication/sign-in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol23"
+}
