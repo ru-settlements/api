@@ -32,6 +32,15 @@ Content-Type: application/json
   "password": "lolkek123lol"
 }
 
+### Post refresh
+POST {{host}}/authentication/refresh-tokens
+Accept: application/json
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImlhdCI6MTY4MjAxOTI1OCwiZXhwIjoxNjgyMTA1NjU4LCJhdWQiOiJsb2NhbGhvc3Q6MzAwMCIsImlzcyI6ImxvY2FsaG9zdDozMDAwIn0.dIspw-zWNbjxRF6Ud2DpA1IKsbxWtJ9q7KqVJOubuSQ"
+}
+
 ### Post signin wrong
 POST {{host}}/authentication/sign-in
 Accept: application/json
