@@ -10,12 +10,11 @@ import { UsersController } from './users/users.controller';
 import { UsersModule } from './users/users.module';
 import { UsersService } from './users/users.service';
 import { NewsTypesModule } from './news_types/news_types.module';
-import { NewsTypesService } from './news_types/news_types.service';
-import { NewsTypesController } from './news_types/news_types.controller';
+import { IamModule } from './iam/iam.module';
 
 @Module({
-  controllers: [AppController, UsersController, NewsTypesController],
-  providers: [AppService, UsersService, NewsTypesService],
+  controllers: [AppController, UsersController],
+  providers: [AppService, UsersService],
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
@@ -40,6 +39,7 @@ import { NewsTypesController } from './news_types/news_types.controller';
     UsersModule,
     NewsModule,
     NewsTypesModule,
+    IamModule,
   ],
 })
 export class AppModule implements NestModule {

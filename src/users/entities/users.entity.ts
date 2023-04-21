@@ -8,6 +8,7 @@ import {
   BeforeInsert,
   BeforeUpdate,
 } from 'typeorm';
+import { Role } from '../enums/role.enum';
 
 @Entity()
 export class Users {
@@ -35,14 +36,19 @@ export class Users {
   @UpdateDateColumn()
   updated_at: Date;
 
+  @Column({ enum: Role, default: Role.Regular })
+  role: Role;
+
   @BeforeInsert()
   insertCreated() {
+    // todo rewrite it or move to helper
     this.created_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 
   @BeforeUpdate()
   insertUpdated() {
+    // todo rewrite it or move to helper
     this.updated_at = new Date(dayjs().format('YYYY-MM-DD HH:mm:ss'));
   }
 }

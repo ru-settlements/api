@@ -18,7 +18,11 @@ export class NewsService {
   }
 
   findAll() {
-    return this.newsRepository.find();
+    return this.newsRepository.find({
+      relations: {
+        type: true,
+      },
+    });
   }
 
   findOne(id: number) {

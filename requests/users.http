@@ -11,3 +11,52 @@ Content-Type: application/json
   "name": "Mun Mun",
   "age": 3
 }
+
+### Post signup
+POST {{host}}/authentication/sign-up
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol"
+}
+
+### Post signin
+POST {{host}}/authentication/sign-in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol"
+}
+
+### Post signin(Admin)
+POST {{host}}/authentication/sign-in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "jkramorevx@gmail.com",
+  "password": "lolkek123lol"
+}
+
+### Post refresh
+POST {{host}}/authentication/refresh-tokens
+Accept: application/json
+Content-Type: application/json
+
+{
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInJlZnJlc2hUb2tlbklkIjoiZjNlYzE3OGUtYmViOC00ZTAxLTlkOGYtYzgzMjViNTc4ZGY5IiwiaWF0IjoxNjgyMTAzMDgyLCJleHAiOjE2ODIxODk0ODIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.7SfDGPi9tsW52-Kcnb8vRCuJHSak-k1yJ_fBq2xVmAA"
+}
+
+### Post signin wrong
+POST {{host}}/authentication/sign-in
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "lolkek@mail.com",
+  "password": "lolkek123lol23"
+}
