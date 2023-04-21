@@ -1,12 +1,12 @@
 ### GET request with environment variables
 GET {{host}}/news
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsImVtYWlsIjoibG9sa2VrQG1haWwuY29tIiwiaWF0IjoxNjgxNjc0MjEyLCJleHAiOjE2ODE2Nzc4MTIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.zO6D6dk4_hi946ERpvDmOWHcvAPVo1ALJQBEUaVe4AE
 
 ### Post requset
 POST {{host}}/news
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiamtyYW1vcmV2eEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIxMDc1MjUsImV4cCI6MTY4MjExMTEyNSwiYXVkIjoibG9jYWxob3N0OjMwMDAiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwMCJ9.49X7gQjBVIBiGR5omHYi-uk_wKxc1Q_l8UdGKPpfvx0
 
 {
   "title": "Biba news",
@@ -24,5 +24,6 @@ Content-Type: application/json
 }
 
 ### Delete request
-DELETE {{host}}/news/7
+DELETE {{host}}/news/5
 Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiamtyYW1vcmV2eEBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODIxMDc1MjUsImV4cCI6MTY4MjExMTEyNSwiYXVkIjoibG9jYWxob3N0OjMwMDAiLCJpc3MiOiJsb2NhbGhvc3Q6MzAwMCJ9.49X7gQjBVIBiGR5omHYi-uk_wKxc1Q_l8UdGKPpfvx0

@@ -8,6 +8,7 @@ import {
   BeforeInsert,
   BeforeUpdate,
 } from 'typeorm';
+import { Role } from '../enums/role.enum';
 
 @Entity()
 export class Users {
@@ -34,6 +35,9 @@ export class Users {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Column({ enum: Role, default: Role.Regular })
+  role: Role;
 
   @BeforeInsert()
   insertCreated() {
