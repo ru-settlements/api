@@ -129,7 +129,7 @@ export class AuthenticationService {
         audience: this.jwtConfiguration.audience,
         issuer: this.jwtConfiguration.issuer,
         secret: this.jwtConfiguration.secret,
-        expiresIn,
+        expiresIn: `${expiresIn}s`,
       },
     );
   }
