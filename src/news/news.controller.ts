@@ -25,7 +25,7 @@ export class NewsController {
     return this.newsService.create(createNewsDto);
   }
 
-  @Auth(AuthType.None)
+  // @Auth(AuthType.None)
   @Get()
   findAll() {
     return this.newsService.findAll();
